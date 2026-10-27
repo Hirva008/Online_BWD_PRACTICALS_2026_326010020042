@@ -1,0 +1,212 @@
+<!--Create a webpage for a college department containing department name, vision, mission, faculty information,
+and contact details. Use ordered and unordered lists appropriately.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Department of Computer Science</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f4f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #12345a;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        nav {
+            background-color: #087e8b;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 25px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px #00000015;
+        }
+
+        h2 {
+            color: #12345a;
+            border-bottom: 2px solid #087e8b;
+            padding-bottom: 8px;
+        }
+
+        .faculty {
+            background-color: #eef5fa;
+            padding: 12px;
+            margin: 10px 0;
+            border-left: 4px solid #087e8b;
+        }
+
+        footer {
+            background-color: #12345a;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: inline-block;
+                margin: 5px;
+            }
+
+            header h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Department of Computer Science and Engineering</h1>
+        <p>ABC College of Engineering</p>
+        <p>Knowledge | Innovation | Excellence</p>
+    </header>
+
+    <nav>
+        <a href="#vision">Vision</a>
+        <a href="#mission">Mission</a>
+        <a href="#faculty">Faculty</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main>
+
+        <section id="about">
+            <h2>About the Department</h2>
+            <p>
+                The Department of Computer Science and Engineering
+                provides quality education in computing, programming,
+                software development, and emerging technologies.
+                Our goal is to prepare students for successful careers
+                and lifelong learning.
+            </p>
+        </section>
+
+        <section id="vision">
+            <h2>Our Vision</h2>
+            <p>
+                To become a center of excellence in computer science
+                education, research, innovation, and technological
+                development for the benefit of society.
+            </p>
+        </section>
+
+        <section id="mission">
+            <h2>Our Mission</h2>
+            <ol>
+                <li>
+                    To provide high-quality education in computer
+                    science and engineering.
+                </li>
+                <li>
+                    To develop technical skills, creativity, and
+                    problem-solving abilities among students.
+                </li>
+                <li>
+                    To promote research, innovation, and entrepreneurship.
+                </li>
+                <li>
+                    To encourage ethical practices and social responsibility.
+                </li>
+            </ol>
+        </section>
+
+        <section id="faculty">
+            <h2>Faculty Information</h2>
+
+            <div class="faculty">
+                <h3>Dr. Amit Sharma</h3>
+                <ul>
+                    <li>Designation: Professor and Head</li>
+                    <li>Qualification: Ph.D. in Computer Science</li>
+                    <li>Specialization: Artificial Intelligence</li>
+                    <li>Email: amit.sharma@example.com</li>
+                </ul>
+            </div>
+
+            <div class="faculty">
+                <h3>Prof. Priya Patel</h3>
+                <ul>
+                    <li>Designation: Associate Professor</li>
+                    <li>Qualification: M.Tech. in Computer Engineering</li>
+                    <li>Specialization: Data Science</li>
+                    <li>Email: priya.patel@example.com</li>
+                </ul>
+            </div>
+
+            <div class="faculty">
+                <h3>Prof. Rahul Mehta</h3>
+                <ul>
+                    <li>Designation: Assistant Professor</li>
+                    <li>Qualification: M.Tech. in Information Technology</li>
+                    <li>Specialization: Web Development</li>
+                    <li>Email: rahul.mehta@example.com</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Details</h2>
+            <ul>
+                <li>Department: Computer Science and Engineering</li>
+                <li>College: ABC College of Engineering</li>
+                <li>Address: University Road, Ahmedabad, Gujarat, India</li>
+                <li>Phone: +91 98765 43210</li>
+                <li>
+                    Email:
+                    <a href="mailto:cse@abccollege.edu">
+                        cse@abccollege.edu
+                    </a>
+                </li>
+                <li>
+                    Website:
+                    <a href="https://example.com">
+                        www.abccollege.edu
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>2026 ABC College of Engineering</p>
+        <p>Department of Computer Science and Engineering</p>
+    </footer>
+
+</body>
+</html>
