@@ -1,0 +1,172 @@
+<!--Create an HTML table displaying student name, subject names, marks, total, percentage, and grade. Use appropriate
+table headings, rows, columns, and table attributes.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marksheet</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f5f9;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #163a5f;
+        }
+
+        table {
+            width: 100%;
+            max-width: 1200px;
+            margin: 25px auto;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        caption {
+            font-size: 20px;
+            font-weight: bold;
+            padding: 15px;
+            color: #163a5f;
+        }
+
+        th, td {
+            border: 1px solid #cbd5e1;
+            padding: 12px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #163a5f;
+            color: white;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #edf4fa;
+        }
+
+        tbody tr:hover {
+            background-color: #e0efff;
+        }
+
+        tfoot {
+            background-color: #dce9f5;
+            font-weight: bold;
+        }
+
+        @media (max-width: 900px) {
+            .table-container {
+                overflow-x: auto;
+            }
+
+            table {
+                min-width: 1000px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Student Marksheet</h1>
+
+    <div class="table-container">
+        <table border="1" cellpadding="10" cellspacing="0">
+            <caption>Academic Performance Report</caption>
+
+            <thead>
+                <tr>
+                    <th rowspan="2">Student Name</th>
+                    <th colspan="7">Subject Marks</th>
+                    <th rowspan="2">Total</th>
+                    <th rowspan="2">Percentage</th>
+                    <th rowspan="2">Grade</th>
+                </tr>
+                <tr>
+                    <th>Statistics</th>
+                    <th>Account</th>
+                    <th>Secretarial Practice</th>
+                    <th>English</th>
+                    <th>Gujarati</th>
+                    <th>Economics</th>
+                    <th>Business Administration</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Hitanshi Vyas</td>
+                    <td>85</td>
+                    <td>92</td>
+                    <td>88</td>
+                    <td>95</td>
+                    <td>80</td>
+                    <td>87</td>
+                    <td>90</td>
+                    <td>617 / 700</td>
+                    <td>88.14%</td>
+                    <td>A</td>
+                </tr>
+
+                <tr>
+                    <td>Priya Patel</td>
+                    <td>90</td>
+                    <td>96</td>
+                    <td>91</td>
+                    <td>98</td>
+                    <td>85</td>
+                    <td>92</td>
+                    <td>95</td>
+                    <td>647 / 700</td>
+                    <td>92.43%</td>
+                    <td>A+</td>
+                </tr>
+
+                <tr>
+                    <td>Arya Verma</td>
+                    <td>75</td>
+                    <td>82</td>
+                    <td>78</td>
+                    <td>85</td>
+                    <td>80</td>
+                    <td>77</td>
+                    <td>83</td>
+                    <td>560 / 700</td>
+                    <td>80%</td>
+                    <td>A</td>
+                </tr>
+
+                <tr>
+                    <td>Neha Shah</td>
+                    <td>65</td>
+                    <td>70</td>
+                    <td>68</td>
+                    <td>75</td>
+                    <td>72</td>
+                    <td>67</td>
+                    <td>73</td>
+                    <td>490 / 700</td>
+                    <td>70%</td>
+                    <td>B</td>
+                </tr>
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <td colspan="11">
+                        Maximum Marks: 700 | Percentage = (Total Marks / 700) 100
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</body>
+</html>
