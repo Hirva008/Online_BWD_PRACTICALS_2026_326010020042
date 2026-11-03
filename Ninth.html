@@ -1,0 +1,125 @@
+<!--Create a simple webpage using HTML5 Canvas to draw basic shapes such as a rectangle, circle, line, and text.
+Also create a simple SVG graphic representing a college logo or icon.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>basic shapes and SVG</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #e8f5f5;
+            text-align: center;
+            margin: 0;
+        }
+
+        h1 {
+            background-color: teal;
+            color: white;
+            padding: 20px;
+        }
+
+        h2 {
+            color: darkcyan;
+        }
+
+        canvas {
+            background-color: white;
+            border: 2px solid black;
+        }
+
+        svg {
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Marwadi University</h1>
+
+    <h2>Basic Shapes</h2>
+
+    <canvas id="myCanvas"
+            width="800" height="280">
+    </canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+    
+        ctx.fillStyle = "pink";
+        ctx.fillRect(75, 45, 160, 100);
+        
+       
+        ctx.beginPath();
+        ctx.arc(400, 95, 50, 0, 2 * Math.PI);
+        ctx.fillStyle = "skyblue";
+        ctx.fill();
+        ctx.stroke();
+
+        
+        ctx.beginPath();
+        ctx.moveTo(550, 50);
+        ctx.lineTo(720, 140);
+        ctx.strokeStyle = "purple";
+        ctx.lineWidth = 5;
+        ctx.stroke();
+
+        ctx.font = "bold 27px Arial";
+        ctx.fillStyle = "green";
+        ctx.fillText(
+
+        );
+    </script>
+
+    <h2>Marwadi University</h2>
+
+    <svg width="300" height="350"
+         viewBox="0 0 300 350">
+
+        <path d="M25 40
+                 Q150 10 275 40
+                 L275 180
+                 Q275 265 150 330
+                 Q25 265 25 180 Z"
+              fill="#0097A7"
+              stroke="#AAAAAA"
+              stroke-width="18"/>
+
+        <path d="M75 95 L150 145 L225 95"
+              fill="none"
+              stroke="white"
+              stroke-width="17"
+              stroke-linecap="round"
+              stroke-linejoin="round"/>
+
+        <path d="M90 155
+                 L90 235
+                 L150 275
+                 L210 235
+                 L210 155"
+              fill="none"
+              stroke="white"
+              stroke-width="17"
+              stroke-linejoin="round"/>
+
+        <path d="M120 215
+                 L120 170
+                 L150 190
+                 L180 170
+                 L180 215"
+              fill="none"
+              stroke="white"
+              stroke-width="16"
+              stroke-linejoin="round"/>
+
+    </svg>
+
+
+</body>
+</html>
