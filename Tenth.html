@@ -1,0 +1,353 @@
+<!--Create a college information webpage that displays its location using HTML5 Geolocation. Add an iframe containing
+a map or another relevant webpage and explain the purpose of using an iframe.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Marwadi University - Rajkot</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f4f6fa;
+    color: #333;
+}
+
+
+header {
+    background: #8e1735;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+header h1 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+
+nav {
+    background: #202b45;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #ffc857;
+}
+
+
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 25px;
+}
+
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px #0002;
+}
+
+h2 {
+    color: #8e1735;
+    margin-bottom: 20px;
+}
+
+
+.info p {
+    line-height: 2;
+    font-size: 16px;
+}
+
+
+button {
+    background: #8e1735;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover {
+    background: #641027;
+}
+
+
+#location {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0f1f5;
+    border-radius: 5px;
+    line-height: 1.8;
+}
+
+
+iframe {
+    width: 100%;
+    height: 400px;
+    border: 0;
+    border-radius: 8px;
+}
+
+
+footer {
+    background: #202b45;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media(max-width: 600px) {
+    header h1 {
+        font-size: 23px;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 8px;
+    }
+
+    .container {
+        padding: 12px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+    <h1>MARWADI UNIVERSITY</h1>
+
+    <p>Rajkot, Gujarat, India</p>
+
+    <p>Education for a Changing World</p>
+
+</header>
+
+
+<nav>
+
+    <a href="#home">Home</a>
+
+    <a href="#about">About</a>
+
+    <a href="#location">Location</a>
+
+    <a href="#map">Map</a>
+
+</nav>
+
+<div class="container" id="home">
+
+
+    <div class="card info" id="about">
+
+        <h2>About Marwadi University</h2>
+
+        <p>
+            Marwadi University is a private university
+            located in Rajkot, Gujarat, India.
+        </p>
+
+        <p>
+            The university offers various undergraduate,
+            postgraduate and doctoral programs.
+            It provides educational opportunities
+            in engineering, management, science,
+            pharmacy, law and other disciplines.
+        </p>
+
+        <br>
+
+        <h2>University Information</h2>
+
+        <p><b>Name:</b> Marwadi University</p>
+
+        <p><b>Location:</b> Rajkot, Gujarat, India</p>
+
+        <p><b>Address:</b> Rajkot-Morbi Road,
+        At & PO Gauridad, Rajkot 360003</p>
+
+        <p><b>Phone:</b> +91 281 7123456</p>
+
+        <p><b>Email:</b> info@marwadiuniversity.ac.in</p>
+
+        <p>
+            <b>Website:</b>
+            <a href="https://www.marwadiuniversity.ac.in/"
+               target="_blank">
+               Official Website
+            </a>
+        </p>
+
+    </div>
+
+
+    <div class="card" id="location">
+
+        <h2>My Current Location</h2>
+
+        <p>
+            Click the button below to find your
+            current geographical location.
+        </p>
+
+        <br>
+
+        <button onclick="getLocation()">
+            Get My Location
+        </button>
+
+        <div id="locationResult">
+            Your location will appear here.
+        </div>
+
+    </div>
+
+
+    <div class="card" id="map">
+
+        <h2>Marwadi University Location Map</h2>
+
+        <p>
+            This map displays the location of
+            Marwadi University, Rajkot, Gujarat.
+        </p>
+
+        <br>
+
+        <iframe
+            src="https://maps.google.com/maps?q=Marwadi%20University%20Rajkot&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            loading="lazy"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+
+    <div class="card">
+
+        <h2>Purpose of Using Iframe</h2>
+
+        <p>
+            An iframe (Inline Frame) is an HTML element
+            used to display another webpage or external
+            content inside the current webpage.
+        </p>
+
+        <br>
+
+        <p><b>Uses of iframe:</b></p>
+
+        <p>1. To display Google Maps.</p>
+
+        <p>2. To display another website.</p>
+
+        <p>3. To display YouTube videos.</p>
+
+        <p>4. To show external content without
+        leaving the current webpage.</p>
+
+    </div>
+
+</div>
+
+
+<footer>
+
+    <h3>Marwadi University, Rajkot</h3>
+
+</footer>
+
+
+
+<script>
+
+function getLocation() {
+
+    const output =
+    document.getElementById("locationResult");
+
+    if (navigator.geolocation) {
+
+        output.innerHTML = "Getting your location...";
+
+        navigator.geolocation.getCurrentPosition(
+
+            function(position) {
+
+                let latitude = position.coords.latitude;
+
+                let longitude = position.coords.longitude;
+
+                output.innerHTML =
+
+                "<h3>Location Found Successfully!</h3>" +
+
+                "<p><b>Latitude:</b> " +
+                latitude + "</p>" +
+
+                "<p><b>Longitude:</b> " +
+                longitude + "</p>" +
+
+                "<p><b>Accuracy:</b> " +
+                position.coords.accuracy + " meters</p>" +
+
+                "<a target='_blank' href='https://www.google.com/maps?q=" +
+                latitude + "," + longitude +
+                "'>View My Location on Google Maps</a>";
+
+            },
+
+            function(error) {
+
+                output.innerHTML =
+                "Unable to get location. Please allow location permission.";
+
+            }
+
+        );
+
+    }
+
+    else {
+
+        output.innerHTML =
+        "Geolocation is not supported by this browser.";
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
