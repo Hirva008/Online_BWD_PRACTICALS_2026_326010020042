@@ -1,0 +1,286 @@
+<!--Create a responsive college webpage containing a navigation bar, header, content sections, images, and footer. 
+Use Bootstrap Grid to arrange the content for different screen sizes.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marwadi University | Rajkot, Gujarat</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --mu-primary: #002b49;
+      --mu-accent: #f37021;
+    }
+    .bg-mu-primary { background-color: var(--mu-primary); }
+    .text-mu-accent { color: var(--mu-accent); }
+    .hero-banner {
+      background: linear-gradient(rgba(0, 43, 73, 0.75), rgba(0, 43, 73, 0.85)),
+                  url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      min-height: 520px;
+    }
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12) !important;
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-mu-primary sticky-top shadow-sm py-2">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center fw-bold" href="#">
+        <i class="bi bi-mortarboard-fill text-mu-accent fs-2 me-2"></i>
+        <span>MARWADI <span class="text-mu-accent">UNIVERSITY</span></span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navContent" aria-controls="navContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navContent">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#campus">Campus Life</a></li>
+          <li class="nav-item"><a class="nav-link" href="#admissions">Admissions</a></li>
+          <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+            <a class="btn btn-warning fw-semibold px-3 text-white" style="background-color: var(--mu-accent); border: none;" href="#apply">Apply Now</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="home" class="hero-banner text-white d-flex align-items-center">
+    <div class="container text-center py-5">
+      <div class="row justify-content-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <span class="badge bg-warning text-dark px-3 py-2 mb-3 fw-bold text-uppercase">NAAC A+ Accredited</span>
+          <h1 class="display-4 fw-bold mb-3">Empowering Minds, Transforming Futures</h1>
+          <p class="lead mb-4 text-light">Discover world-class technical, managerial, and research education in Rajkot, Gujarat.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="#programs" class="btn btn-light btn-lg px-4 fw-bold">Explore Courses</a>
+            <a href="#contact" class="btn btn-outline-light btn-lg px-4">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="bg-light py-4 border-bottom">
+    <div class="container">
+      <div class="row text-center g-3">
+        <div class="col-6 col-md-3">
+          <h3 class="fw-bold text-primary mb-0">10,000+</h3>
+          <p class="text-muted small mb-0">Students Enrolled</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h3 class="fw-bold text-primary mb-0">500+</h3>
+          <p class="text-muted small mb-0">Placement Partners</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h3 class="fw-bold text-primary mb-0">32+</h3>
+          <p class="text-muted small mb-0">Acres Green Campus</p>
+        </div>
+        <div class="col-6 col-md-3">
+          <h3 class="fw-bold text-primary mb-0">40+</h3>
+          <p class="text-muted small mb-0">Global Nationalities</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-5">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-12 col-lg-6">
+          <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=800&q=80" alt="Students in University" class="img-fluid rounded-3 shadow">
+        </div>
+        <div class="col-12 col-lg-6">
+          <h6 class="text-mu-accent fw-bold text-uppercase">About Marwadi University</h6>
+          <h2 class="fw-bold text-dark mb-3">Center of Academic Excellence in Saurashtra</h2>
+          <p class="text-muted">Established under the Gujarat Private Universities Act, Marwadi University has rapidly emerged as a premier institution in western India. Situated on Rajkot-Morbi Highway, MU delivers industry-aligned engineering, management, pharmacy, law, and computer science degrees.</p>
+          <div class="row g-2 mt-2">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                <span>Industry-Ready Curriculum</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                <span>Supercomputer Param Shavak</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                <span>Dedicated Placement Cell</span>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill text-success fs-5 me-2"></i>
+                <span>Incubation & Startup Hub</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="programs" class="py-5 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h6 class="text-mu-accent fw-bold text-uppercase">Academic Programs</h6>
+        <h2 class="fw-bold">Degrees That Build Careers</h2>
+        <p class="text-muted">Choose from cutting-edge undergraduate, postgraduate, and doctoral degrees.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm card-hover">
+            <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Engineering">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Engineering & Technology</h5>
+              <p class="card-text text-muted small">B.Tech & M.Tech in Computer Science, AI & ML, Mechanical, Civil, and Electrical Engineering.</p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+              <a href="#" class="text-decoration-none fw-semibold text-mu-accent">View Courses &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm card-hover">
+            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Computer Applications">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Computer Applications</h5>
+              <p class="card-text text-muted small">BCA, MCA, and specialized certifications in Cloud Computing, Cybersecurity, and Data Science.</p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+              <a href="#" class="text-decoration-none fw-semibold text-mu-accent">View Courses &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="card h-100 border-0 shadow-sm card-hover">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Business Management">
+            <div class="card-body">
+              <h5 class="card-title fw-bold">Business & Management</h5>
+              <p class="card-text text-muted small">BBA, MBA with dual specializations in Marketing, Finance, HR, and International Business.</p>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+              <a href="#" class="text-decoration-none fw-semibold text-mu-accent">View Courses &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="campus" class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h6 class="text-mu-accent fw-bold text-uppercase">Campus Experience</h6>
+        <h2 class="fw-bold">World-Class Infrastructure</h2>
+        <p class="text-muted">A vibrant 32-acre campus designed for learning, sports, and cultural growth.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="border rounded p-3 text-center h-100 shadow-sm">
+            <i class="bi bi-book-half display-5 text-primary mb-3 d-block"></i>
+            <h5 class="fw-bold">Central Library</h5>
+            <p class="text-muted small">50,000+ books, digital journals, and e-learning resources accessible 24/7.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="border rounded p-3 text-center h-100 shadow-sm">
+            <i class="bi bi-wifi display-5 text-primary mb-3 d-block"></i>
+            <h5 class="fw-bold">Smart Campus</h5>
+            <p class="text-muted small">High-speed Wi-Fi, modern audio-visual lecture halls, and advanced labs.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="border rounded p-3 text-center h-100 shadow-sm">
+            <i class="bi bi-trophy display-5 text-primary mb-3 d-block"></i>
+            <h5 class="fw-bold">Sports Arena</h5>
+            <p class="text-muted small">Cricket ground, football turf, basketball courts, and indoor sports complex.</p>
+          </div>
+        </div>
+        <div class="col-12 col-sm-6 col-lg-3">
+          <div class="border rounded p-3 text-center h-100 shadow-sm">
+            <i class="bi bi-building display-5 text-primary mb-3 d-block"></i>
+            <h5 class="fw-bold">Hostel Facilities</h5>
+            <p class="text-muted small">Secure on-campus residential facilities with dining halls and medical support.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact" class="bg-mu-primary text-white pt-5 pb-3">
+    <div class="container">
+      <div class="row g-4 pb-4 border-bottom border-secondary">
+        <!-- University Details -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <h5 class="fw-bold text-white mb-3">Marwadi University</h5>
+          <p class="text-light small">
+            Rajkot-Morbi Road, At & Po. Gauridad,<br>
+            Rajkot - 360003, Gujarat, India.
+          </p>
+          <p class="small text-light mb-1"><i class="bi bi-telephone-fill me-2 text-mu-accent"></i>+91 281 7123456</p>
+          <p class="small text-light"><i class="bi bi-envelope-fill me-2 text-mu-accent"></i>info@marwadiuniversity.ac.in</p>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-mu-accent fw-bold text-uppercase mb-3">Quick Links</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="#about" class="text-light text-decoration-none">About Us</a></li>
+            <li class="mb-2"><a href="#programs" class="text-light text-decoration-none">Programs</a></li>
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Placements</a></li>
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Research</a></li>
+          </ul>
+        </div>
+
+        <div class="col-6 col-md-3 col-lg-2">
+          <h6 class="text-mu-accent fw-bold text-uppercase mb-3">Academics</h6>
+          <ul class="list-unstyled small">
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Engineering</a></li>
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Computer Applications</a></li>
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Management</a></li>
+            <li class="mb-2"><a href="#" class="text-light text-decoration-none">Law & Science</a></li>
+          </ul>
+        </div>
+
+        <div class="col-12 col-lg-4">
+          <h6 class="text-mu-accent fw-bold text-uppercase mb-3">Connect With Us</h6>
+          <div class="d-flex gap-3 fs-5 mb-3">
+            <a href="#" class="text-light"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="text-light"><i class="bi bi-youtube"></i></a>
+          </div>
+          <p class="small text-light">Subscribe to get notifications on admission cycles, seminars, and events.</p>
+        </div>
+      </div>
+
+      <div class="text-center pt-3 small text-secondary">
+        <p class="mb-0">&copy; 2026 Marwadi University, Rajkot.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
