@@ -1,0 +1,435 @@
+<!--Design a restaurant menu webpage using CSS and Bootstrap. Display 14 food categories, food images, prices, and 
+descriptions using Bootstrap cards/grid. Apply gradients, borders, and text effects to improve presentation.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Indian Restaurant</title>
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #fff8e1, #ffe0b2);
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            background: linear-gradient(90deg, #1b5e20, #4caf50);
+            color: white;
+            text-align: center;
+            padding: 35px;
+            border-bottom: 6px solid orange;
+        }
+
+        .header h1 {
+            font-size: 42px;
+            font-weight: bold;
+            text-shadow: 3px 3px 5px #333;
+        }
+
+        .header p {
+            font-size: 19px;
+        }
+
+        .navbar {
+            background-color: #263238;
+        }
+
+        .navbar a {
+            color: white;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            color: orange;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #bf360c;
+            font-size: 34px;
+            font-weight: bold;
+            margin: 35px 0;
+            text-shadow: 2px 2px 3px #ffcc80;
+        }
+
+        .food-card {
+            border: 3px solid #ff9800;
+            border-radius: 18px;
+            overflow: hidden;
+            background-color: white;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
+            transition: 0.3s;
+            height: 100%;
+        }
+
+        .food-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-title {
+            color: #2e7d32;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .card-text {
+            color: #555;
+            font-size: 15px;
+        }
+
+        .price {
+            color: #d84315;
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+        .btn-order {
+            background: linear-gradient(90deg, #ff9800, #f44336);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 8px 22px;
+            font-weight: bold;
+        }
+
+        .btn-order:hover {
+            background: #2e7d32;
+            color: white;
+        }
+
+       
+        footer {
+            background: linear-gradient(90deg, #1b5e20, #263238);
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <h1>🌿 Royal Indian Restaurant 🌿</h1>
+    <p>Authentic Indian Taste | 100% Pure Vegetarian</p>
+    <h4>Delicious Food Made With Love ❤️</h4>
+</header>
+
+<nav class="navbar navbar-expand-lg">
+    <div class="container">
+        <a class="navbar-brand" href="#">🍽️ Royal Veg</a>
+
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="#home">Home</a>
+            <a class="nav-link" href="#menu">Menu</a>
+            <a class="nav-link" href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<section id="home" class="container text-center mt-5">
+    <h2 style="color:#2e7d32; font-weight:bold;">
+        Welcome to Royal Indian Restaurant
+    </h2>
+
+    <p class="fs-5">
+        Experience the rich flavors of India with our
+        delicious and freshly prepared vegetarian dishes.
+    </p>
+
+    <span class="badge bg-success fs-6">
+        100% Pure Vegetarian
+    </span>
+</section>
+
+<section id="menu" class="container">
+
+<h2 class="section-title">🍴 Our Special Food Menu 🍴</h2>
+
+<div class="row g-4">
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?w=600"
+             alt="Paneer Butter Masala">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">1. Punjabi</h5>
+            <h6>Paneer Butter Masala</h6>
+            <p class="card-text">
+                Soft paneer cubes cooked in creamy tomato gravy with Indian spices.
+            </p>
+            <p class="price">₹220</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600"
+             alt="Gujarati Thali">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">2. Gujarati</h5>
+            <h6>Gujarati Special Thali</h6>
+            <p class="card-text">
+                Traditional Gujarati meal with roti, dal, rice, vegetables and sweets.
+            </p>
+            <p class="price">₹250</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1668236543090-82eba5ee5976?w=600"
+             alt="Masala Dosa">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">3. South Indian</h5>
+            <h6>Masala Dosa</h6>
+            <p class="card-text">
+                Crispy dosa filled with spicy potatoes, served with sambar and chutney.
+            </p>
+            <p class="price">₹140</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1585032226651-759b368d7246?w=600"
+             alt="Veg Noodles">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">4. Indo-Chinese</h5>
+            <h6>Veg Hakka Noodles</h6>
+            <p class="card-text">
+                Stir-fried noodles with fresh vegetables and delicious sauces.
+            </p>
+            <p class="price">₹160</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600"
+             alt="Veg Pizza">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">5. Pizza</h5>
+            <h6>Farm Fresh Veg Pizza</h6>
+            <p class="card-text">
+                Cheesy pizza topped with capsicum, onion, tomato and sweet corn.
+            </p>
+            <p class="price">₹199</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1520072959219-c595dc870360?w=600"
+             alt="Veg Burger">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">6. Burger</h5>
+            <h6>Cheese Veg Burger</h6>
+            <p class="card-text">
+                Crispy vegetable patty with cheese, lettuce and special sauce.
+            </p>
+            <p class="price">₹120</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=600"
+             alt="Veg Sandwich">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">7. Sandwich</h5>
+            <h6>Grilled Veg Sandwich</h6>
+            <p class="card-text">
+                Toasted bread stuffed with vegetables, cheese and green chutney.
+            </p>
+            <p class="price">₹110</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?w=600"
+             alt="Samosa">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">8. Street Food</h5>
+            <h6>Punjabi Samosa</h6>
+            <p class="card-text">
+                Crispy golden samosas stuffed with spicy potatoes and peas.
+            </p>
+            <p class="price">₹60</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?w=600"
+             alt="Veg Fried Rice">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">9. Rice</h5>
+            <h6>Veg Fried Rice</h6>
+            <p class="card-text">
+                Aromatic rice tossed with colorful vegetables and mild spices.
+            </p>
+            <p class="price">₹150</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1617692855027-33b14f061079?w=600"
+             alt="Butter Naan">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">10. Indian Breads</h5>
+            <h6>Butter Naan</h6>
+            <p class="card-text">
+                Soft and fluffy Indian bread freshly baked and topped with butter.
+            </p>
+            <p class="price">₹55</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https:images.unsplash.com/photo-1589301760014 "
+             alt="Idli Sambar"
+             class="card-img-top">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">11.South Indian</h5>
+            <h6>Idli Sambar</h6>
+
+            <p class="card-text">
+                Soft steamed idlis served with sambhar and coconut chutney.
+            </p>
+
+            <p class="price">₹90</p>
+
+            <button class="btn btn-order">Order Now
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=600"
+             alt="Chocolate Pastry">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">12. Desserts</h5>
+            <h6>Chocolate Pastry</h6>
+            <p class="card-text">
+                Soft chocolate cake layered with rich chocolate cream.
+            </p>
+            <p class="price">₹120</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600"
+             alt="Chocolate Ice Cream">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">13. Ice Cream</h5>
+            <h6>Chocolate Ice Cream</h6>
+            <p class="card-text">
+                Creamy chocolate ice cream topped with delicious chocolate syrup.
+            </p>
+            <p class="price">₹90</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+<div class="col-lg-3 col-md-6">
+    <div class="card food-card">
+        <img src="https://images.unsplash.com/photo-1553530666-ba11a7da3888?w=600"
+             alt="Mango Shake">
+
+        <div class="card-body text-center">
+            <h5 class="card-title">14. Beverages</h5>
+            <h6>Fresh Strawberry Shake</h6>
+            <p class="card-text">
+                Refreshing Strawberry milkshake prepared with sweet Strawberry and milk.
+            </p>
+            <p class="price">₹110</p>
+            <button class="btn btn-order">Order Now</button>
+        </div>
+    </div>
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="container text-center mt-5">
+
+    <h2 style="color:#2e7d32; font-weight:bold;">
+        📞 Contact Us
+    </h2>
+
+    <p>📍 Gujarat, India</p>
+    <p>🕒 Opening Hours: 10:00 AM - 11:00 PM</p>
+    <p>🌿 Fresh Food | Pure Veg | Best Quality</p>
+
+</section>
+
+<footer>
+    <h4>🌿 Royal Indian Restaurant 🌿</h4>
+
+    <p>Serving Happiness With Every Bite!</p>
+
+    <p>
+        © 2026 Royal Indian Restaurant.
+    </p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
