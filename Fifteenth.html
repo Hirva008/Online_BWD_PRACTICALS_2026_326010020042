@@ -1,0 +1,417 @@
+<!--Create a webpage for a product or service and apply CSS pseudo-classes, pseudo-elements, transitions/animations,
+image manipulation, and navigation styling to make the webpage interactive.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glow Beauty - Skincare Products</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff5f8;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(90deg, #ff6b9d, #ff9a9e);
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    font-size: 38px;
+    text-shadow: 2px 2px 5px #a83a60;
+    animation: fadeIn 2s ease-in;
+}
+
+header p {
+    margin-top: 8px;
+    font-size: 17px;
+}
+
+nav {
+    background: #ff4081;
+    padding: 15px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    font-size: 17px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background: white;
+    color: #ff4081;
+    border-radius: 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 65px 20px;
+    background: linear-gradient(120deg, #ffe0eb, #fff);
+}
+
+.hero h2 {
+    font-size: 36px;
+    color: #e91e63;
+    margin-bottom: 15px;
+}
+
+.hero h2::first-letter {
+    color: #a00048;
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.btn {
+    display: inline-block;
+    background: #e91e63;
+    color: white;
+    padding: 13px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.4s ease;
+}
+
+.btn:hover {
+    background: #880e4f;
+    transform: scale(1.1);
+    box-shadow: 0 5px 15px #ff80ab;
+}
+
+.products {
+    padding: 50px 30px;
+    text-align: center;
+}
+
+.products h2 {
+    color: #e91e63;
+    font-size: 32px;
+    margin-bottom: 35px;
+}
+
+.products h2::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background: #ff4081;
+    margin: 12px auto;
+    border-radius: 5px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    width: 270px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px solid #ffc1d6;
+    box-shadow: 0 5px 15px #ddd;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 12px 25px #ffb3cc;
+}
+
+.card img {
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+    border-radius: 12px;
+    filter: brightness(95%);
+    transition: 0.5s;
+}
+
+.card img:hover {
+    transform: scale(1.05);
+    filter: brightness(110%);
+}
+
+.card h3 {
+    margin: 15px 0 10px;
+    color: #d81b60;
+}
+
+.card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.price {
+    color: #e91e63;
+    font-size: 21px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+button {
+    background: #ff4081;
+    color: white;
+    border: none;
+    padding: 11px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #ad1457;
+    transform: scale(1.08);
+}
+
+.about {
+    background: #ffe4ee;
+    padding: 50px 25px;
+    text-align: center;
+}
+
+.about h2 {
+    color: #e91e63;
+    margin-bottom: 20px;
+}
+
+.about p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.8;
+    font-size: 17px;
+}
+
+.contact {
+    text-align: center;
+    padding: 45px;
+}
+
+.contact h2 {
+    color: #e91e63;
+    margin-bottom: 20px;
+}
+
+.contact p {
+    margin: 10px;
+}
+
+footer {
+    background: #ff4081;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media(max-width: 600px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        display: inline-block;
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .hero h2 {
+        font-size: 27px;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<header id="home">
+    <h1>Glow Beauty</h1>
+    <p>Discover Your Natural Glow</p>
+</header>
+
+<nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+    <h2>Glow Naturally, Shine Beautifully!</h2>
+
+    <p>
+        Explore our collection of skincare products
+        for healthy and glowing skin.
+    </p>
+
+    <a href="#products" class="btn">
+        Explore Products
+    </a>
+</section>
+
+<section class="products" id="products">
+
+<h2>Our Beauty Products</h2>
+
+<div class="product-container">
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=600"
+alt="Face Serum">
+
+<h3>Glow Face Serum</h3>
+
+<p>
+Hydrating face serum that helps keep
+your skin fresh and moisturized.
+</p>
+
+<div class="price">₹499</div>
+
+<button type="button">Shop Now</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=600"
+alt="Skincare Cream">
+
+<h3>Moisturizing Cream</h3>
+
+<p>
+A gentle moisturizing cream for
+soft and smooth skin.
+</p>
+
+<div class="price">₹399</div>
+
+<button type="button">Shop Now</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?w=600"
+alt="Beauty Product">
+
+<h3>Natural Face Wash</h3>
+
+<p>
+A refreshing daily face wash
+for clean and healthy-looking skin.
+</p>
+
+<div class="price">₹299</div>
+
+<button type="button">Shop Now</button>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=600"
+alt="Beauty and Makeup Products">
+
+<h3>Beauty Essentials</h3>
+
+<p>
+Explore our beauty essentials
+for your everyday skincare routine.
+</p>
+
+<div class="price">₹599</div>
+
+<button type="button">Shop Now</button>
+
+</div>
+
+</div>
+</section>
+
+<section class="about" id="about">
+
+<h2>About Glow Beauty</h2>
+
+<p>
+Glow Beauty offers a beautiful collection
+of skincare and beauty products.
+
+Our goal is to make everyday skincare
+simple, enjoyable, and affordable.
+
+Discover products designed to help
+you care for your skin with confidence.
+</p>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<p>Email: glowbeauty@example.com</p>
+
+<p>Location: Gujarat, India</p>
+
+<p>Follow us for new product updates!</p>
+
+</section>
+<footer>
+
+<p>
+&copy; 2026 Glow Beauty 
+
+</p>
+
+</footer>
+
+</body>
+</html>
