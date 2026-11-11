@@ -1,0 +1,206 @@
+<!-- Create a JavaScript program that accepts marks of different subjects, calculates total and percentage,
+and displays the result and grade. Use variables, operators, conditional statements, and functions.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Result Calculator</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #89f7fe, #66a6ff);
+        text-align: center;
+        padding: 30px;
+    }
+
+    .container {
+        background: white;
+        width: 450px;
+        max-width: 90%;
+        margin: 30px auto;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px gray;
+    }
+
+    h1 {
+        color: #2563eb;
+        font-size: 28px;
+    }
+
+    h2 {
+        color: #333;
+    }
+
+    input {
+        width: 85%;
+        padding: 12px;
+        margin: 10px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 15px;
+    }
+
+    input:focus {
+        border-color: #2563eb;
+        outline: none;
+    }
+
+    button {
+        background: #2563eb;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+
+    button:hover {
+        background: #1e40af;
+    }
+
+    #result {
+        margin-top: 25px;
+        padding: 15px;
+        background: #eff6ff;
+        border-radius: 10px;
+        display: none;
+        text-align: left;
+        line-height: 1.8;
+    }
+
+    .pass {
+        color: green;
+        font-weight: bold;
+    }
+
+    .fail {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Result Calculator</h1>
+
+    <h2>Enter Subject Marks</h2>
+
+    <input type="number" id="sub1"
+    placeholder="Entrepreneurship (Out of 100)">
+
+    <input type="number" id="sub2"
+    placeholder="Mathematics (Out of 100)">
+
+    <input type="number" id="sub3"
+    placeholder="Computer Architecture (Out of 100)">
+
+    <input type="number" id="sub4"
+    placeholder="Environmental Science (Out of 100)">
+
+    <input type="number" id="sub5"
+    placeholder="Programming in C (Out of 100)">
+
+    <br>
+
+    <button onclick="calculateResult()">
+        Calculate Result
+    </button>
+
+    <div id="result"></div>
+
+</div>
+
+<script>
+
+function calculateResult() {
+
+    let m1 = Number(document.getElementById("sub1").value);
+    let m2 = Number(document.getElementById("sub2").value);
+    let m3 = Number(document.getElementById("sub3").value);
+    let m4 = Number(document.getElementById("sub4").value);
+    let m5 = Number(document.getElementById("sub5").value);
+
+    let inputs = document.querySelectorAll("input");
+
+    for (let input of inputs) {
+
+        if (input.value.trim() === "" ||
+            !Number.isFinite(Number(input.value)) ||
+            Number(input.value) < 0 ||
+            Number(input.value) > 100) {
+
+            alert("Please enter valid marks between 0 and 100!");
+            return;
+        }
+    }
+
+    let total = m1 + m2 + m3 + m4 + m5;
+
+    let percentage = (total / 500) * 100;
+
+    let grade;
+    let status;
+
+    if (m1 < 35 || m2 < 35 || m3 < 35 ||
+        m4 < 35 || m5 < 35) {
+
+        grade = "F";
+        status = "Fail";
+
+    }
+    else if (percentage >= 90) {
+        grade = "A+";
+        status = "Pass";
+    }
+    else if (percentage >= 80) {
+        grade = "A";
+        status = "Pass";
+    }
+    else if (percentage >= 70) {
+        grade = "B";
+        status = "Pass";
+    }
+    else if (percentage >= 60) {
+        grade = "C";
+        status = "Pass";
+    }
+    else if (percentage >= 50) {
+        grade = "D";
+        status = "Pass";
+    }
+    else {
+        grade = "E";
+        status = "Pass";
+    }
+
+    let resultBox = document.getElementById("result");
+
+    resultBox.style.display = "block";
+
+    resultBox.innerHTML = `
+        <h2>Student Result</h2>
+        <hr>
+        <p><b>Total Marks:</b> ${total} / 500</p>
+        <p><b>Percentage:</b> ${percentage.toFixed(2)}%</p>
+        <p><b>Grade:</b> ${grade}</p>
+        <p><b>Result:</b>
+        <span class="${status === 'Pass' ? 'pass' : 'fail'}">
+        ${status}
+        </span></p>
+    `;
+}
+
+</script>
+
+</body>
+</html>
