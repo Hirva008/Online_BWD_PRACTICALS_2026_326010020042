@@ -1,0 +1,267 @@
+<!--Create a webpage that accepts a student's age, attendance percentage, and marks. Use JavaScript conditional
+statements to determine whether the student is eligible for an examination/admission. Display an appropriate message using a dialog box.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Eligibility Checker</title>
+
+<style>
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.container {
+    background: white;
+    width: 550px;
+    padding: 40px;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    text-align: center;
+}
+
+
+h1 {
+    color: #5b3cc4;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 16px;
+    margin-bottom: 30px;
+}
+
+
+.form-group {
+    text-align: left;
+    margin-bottom: 22px;
+}
+
+label {
+    display: block;
+    font-size: 17px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px #c7d2fe;
+}
+
+
+button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #764ba2, #667eea);
+    transform: scale(1.03);
+}
+
+
+.info {
+    background: #f1f3ff;
+    margin-top: 25px;
+    padding: 18px;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.info h3 {
+    color: #5b3cc4;
+    margin-bottom: 10px;
+}
+
+.info p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.8;
+}
+
+
+footer {
+    margin-top: 25px;
+    font-size: 13px;
+    color: #777;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Student Eligibility Checker</h1>
+
+    <p class="subtitle">
+        Examination & Admission Eligibility System
+    </p>
+
+    
+    <div class="form-group">
+        <label>Student Age</label>
+
+        <input type="number" id="age"
+        placeholder="Enter your age">
+    </div>
+
+  
+    <div class="form-group">
+        <label>Attendance Percentage (%)</label>
+
+        <input type="number" id="attendance"
+        placeholder="Enter attendance percentage">
+    </div>
+
+    <div class="form-group">
+        <label>Marks Percentage (%)</label>
+
+        <input type="number" id="marks"
+        placeholder="Enter marks percentage">
+    </div>
+
+   
+    <button onclick="checkEligibility()">
+        Check Eligibility
+    </button>
+
+    
+    <div class="info">
+
+        <h3>Eligibility Criteria</h3>
+
+        <p>✔ Minimum Age: 17 Years</p>
+
+        <p>✔ Minimum Attendance: 75%</p>
+
+        <p>✔ Minimum Marks: 40%</p>
+
+    </div>
+
+    <footer>
+        © 2026 Student Eligibility System
+    </footer>
+
+</div>
+
+<script>
+
+
+function checkEligibility() {
+
+   
+    let ageInput = document.getElementById("age").value;
+    let attendanceInput =
+        document.getElementById("attendance").value;
+    let marksInput =
+        document.getElementById("marks").value;
+
+    
+    if (ageInput === "" ||
+        attendanceInput === "" ||
+        marksInput === "") {
+
+        alert("Please fill in all the fields!");
+        return;
+    }
+
+   
+    let age = Number(ageInput);
+    let attendance = Number(attendanceInput);
+    let marks = Number(marksInput);
+
+    
+    if (!Number.isInteger(age) ||
+        age < 0 || age > 120 ||
+        attendance < 0 || attendance > 100 ||
+        marks < 0 || marks > 100) {
+
+        alert("Please enter valid age, attendance and marks!");
+        return;
+    }
+
+    if (age >= 17 &&
+        attendance >= 75 &&
+        marks >= 40) {
+
+        alert(
+            "CONGRATULATIONS!\n\n" +
+            "You are ELIGIBLE for Examination / Admission.\n\n" +
+            "Age: " + age + " Years\n" +
+            "Attendance: " + attendance + "%\n" +
+            "Marks: " + marks + "%"
+        );
+
+    }
+
+    else {
+
+        let reason = "";
+
+        if (age < 17) {
+            reason += "- Age must be at least 17 years.\n";
+        }
+
+        if (attendance < 75) {
+            reason += "- Attendance must be at least 75%.\n";
+        }
+
+        if (marks < 40) {
+            reason += "- Marks must be at least 40%.\n";
+        }
+
+        alert(
+            "NOT ELIGIBLE!\n\n" +
+            "You are not eligible for Examination / Admission.\n\n" +
+            "Reason:\n" + reason
+        );
+
+    }
+
+}
+
+</script>
+
+</body>
+</html>
