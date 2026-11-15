@@ -1,0 +1,454 @@
+<!--Develop a small personal/college website using HTML5, CSS3, Bootstrap, and JavaScript. Organize the website into
+multiple pages and prepare it for publishing on a web server. Explain the steps required to upload the website and access it through a web browser.-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My College | Official Website</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7fb;
+    color: #333;
+}
+
+.navbar {
+    background: #073b83;
+}
+
+.navbar-brand {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: white !important;
+    margin-left: 12px;
+}
+
+.nav-link:hover {
+    color: #ffc107 !important;
+}
+
+.page {
+    display: none;
+    min-height: 75vh;
+}
+
+#home {
+    display: block;
+}
+
+.hero {
+    background: linear-gradient(rgba(0,30,80,.75), rgba(0,30,80,.75)),
+    url('https://images.unsplash.com/photo-1562774053-701939374585?w=1600')
+    center/cover;
+    color: white;
+    padding: 130px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 45px;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+.section-title {
+    color: #073b83;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.08);
+    height: 100%;
+    transition: .3s;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card h4 {
+    color: #073b83;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-box {
+    max-width: 650px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0,0,0,.08);
+}
+
+footer {
+    background: #071d3b;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+@media(max-width:768px) {
+    .hero {
+        padding: 90px 15px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .nav-link {
+        margin-left: 0;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+    <a class="navbar-brand" href="#" onclick="showPage('home')">
+        🎓 My College
+    </a>
+
+    <button class="navbar-toggler" type="button"
+    data-bs-toggle="collapse" data-bs-target="#menu">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#home" onclick="showPage('home')">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about" onclick="showPage('about')">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#courses" onclick="showPage('courses')">Courses</a></li>
+            <li class="nav-item"><a class="nav-link" href="#gallery" onclick="showPage('gallery')">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+    </div>
+</div>
+</nav>
+
+<div id="home" class="page">
+
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to My College</h1>
+            <p>Education is the key to success.</p>
+            <button class="btn btn-warning btn-lg"
+            onclick="showPage('about')">Explore More</button>
+        </div>
+    </section>
+
+    <section class="container py-5">
+        <h2 class="section-title">Welcome to Our College</h2>
+        <p class="text-center">
+            Our college provides quality education, modern facilities
+            and excellent opportunities to build a successful future.
+        </p>
+
+        <div class="row g-4 mt-3">
+            <div class="col-md-4">
+                <div class="info-card text-center">
+                    <h4>📚 Quality Education</h4>
+                    <p>Learn from experienced teachers and develop your skills.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card text-center">
+                    <h4>💻 Modern Technology</h4>
+                    <p>Gain practical knowledge with modern technology.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="info-card text-center">
+                    <h4>🏆 Bright Future</h4>
+                    <p>Prepare yourself for a successful career.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<div id="about" class="page">
+<section class="container py-5">
+    <h2 class="section-title">About Us</h2>
+
+    <div class="row align-items-center g-4">
+        <div class="col-md-6">
+            <img class="img-fluid rounded"
+            src="https://images.unsplash.com/photo-1562774053-701939374585?w=900"
+            alt="College building">
+        </div>
+
+        <div class="col-md-6">
+            <h3>About Our College</h3>
+            <p>
+                Our college is dedicated to providing quality education
+                and creating opportunities for students.
+            </p>
+            <p>
+                We focus on academic excellence, practical learning,
+                personality development and career growth.
+            </p>
+
+            <h5>Our Mission</h5>
+            <p>To provide quality education and develop responsible citizens.</p>
+
+            <h5>Our Vision</h5>
+            <p>To become a centre of excellence in education and innovation.</p>
+        </div>
+    </div>
+
+    <div class="info-card mt-4">
+        <h4>Student Information</h4>
+        <p><b>Name:</b>Riya</p>
+        <p><b>College:</b> ABC College </p>
+        <p><b>Course:</b> BCA / BSc / BE</p>
+        <p><b>Skills:</b> HTML, CSS, Bootstrap, JavaScript</p>
+    </div>
+</section>
+</div>
+
+<div id="courses" class="page">
+<section class="container py-5">
+    <h2 class="section-title">Our Courses</h2>
+
+    <div class="row g-4">
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <h4>BCA</h4>
+                <p>Bachelor of Computer Applications.</p>
+                <p>Learn programming, databases and web development.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <h4>BSc IT</h4>
+                <p>Bachelor of Science in Information Technology.</p>
+                <p>Learn networking, software and information systems.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <h4>BBA</h4>
+                <p>Bachelor of Business Administration.</p>
+                <p>Learn management, marketing and business skills.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <h4>BCom</h4>
+                <p>Bachelor of Commerce.</p>
+                <p>Learn accounting, finance and business studies.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <h4>BA</h4>
+                <p>Bachelor of Arts.</p>
+                <p>Explore humanities, languages and social sciences.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="info-card">
+                <h4>BE</h4>
+                <p>Bachelor of Engineering.</p>
+                <p>Develop technical and engineering knowledge.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+</div>
+
+<div id="gallery" class="page">
+<section class="container py-5">
+    <h2 class="section-title">College Gallery</h2>
+
+    <div class="row g-3">
+        <div class="col-md-4">
+            <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1562774053-701939374585?w=700"
+            alt="College building">
+        </div>
+
+        <div class="col-md-4">
+            <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=700"
+            alt="College library">
+        </div>
+
+        <div class="col-md-4">
+            <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=700"
+            alt="Students">
+        </div>
+
+        <div class="col-md-4">
+            <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=700"
+            alt="Classroom">
+        </div>
+
+        <div class="col-md-4">
+            <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=700"
+            alt="College activity">
+        </div>
+
+        <div class="col-md-4">
+            <img class="gallery-img"
+            src="https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=700"
+            alt="Graduation">
+        </div>
+    </div>
+</section>
+</div>
+
+<div id="contact" class="page">
+<section class="container py-5">
+    <h2 class="section-title">Contact Us</h2>
+
+    <div class="contact-box">
+        <form id="contactForm">
+
+            <div class="mb-3">
+                <label class="form-label">Riya</label>
+                <input type="text" id="name" class="form-control"
+                placeholder="Riya" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Email Address</label>
+                <input type="email" id="email" class="form-control"
+                placeholder="Enter your email" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Subject</label>
+                <input type="text" id="subject" class="form-control"
+                placeholder="Enter subject" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Message</label>
+                <textarea id="message" class="form-control"
+                rows="4" placeholder="Write your message"
+                required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                Submit
+            </button>
+
+        </form>
+
+        <p id="response" class="text-center mt-3"></p>
+    </div>
+</section>
+</div>
+
+<footer>
+    <h5>🎓 My College Website</h5>
+    <p>Learn | Grow | Achieve</p>
+    <p>© 2026 My College.</p>
+</footer>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+
+function showPage(pageId) {
+
+    document.querySelectorAll('.page').forEach(function(page) {
+        page.style.display = 'none';
+    });
+
+    document.getElementById(pageId).style.display = 'block';
+
+    const menu = document.getElementById('menu');
+    const bsCollapse = bootstrap.Collapse.getInstance(menu);
+
+    if (bsCollapse) {
+        bsCollapse.hide();
+    }
+
+    window.scrollTo(0, 0);
+}
+
+document.getElementById('contactForm').addEventListener('submit',
+function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById('name').value;
+
+    document.getElementById('response').innerHTML =
+    "Thank you, " + name +
+    "! Your message has been received successfully.";
+
+    document.getElementById('response').style.color = "green";
+
+    this.reset();
+
+});
+
+function handleHash() {
+    const page = location.hash.replace('#', '') || 'home';
+    const validPages = ['home', 'about', 'courses', 'gallery', 'contact'];
+
+    showPage(validPages.includes(page) ? page : 'home');
+}
+
+window.addEventListener('hashchange', handleHash);
+
+handleHash();
+
+</script>
+
+</body>
+</html>
